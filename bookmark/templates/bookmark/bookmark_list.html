@@ -1,8 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'bookmark/base.html' %}
 
 {% block title %}Bookmark List{% endblock %}
 
 {% block content %}
+
 <div class = "btn-group">
     <a href="{% url 'bookmark:add' %}" class="btn btn-info">Add Bookmark</a>
 </div>
@@ -10,7 +11,7 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">#</th>
+        <th scope="col">no</th>
         <th scope="col">Site</th>
         <th scope="col">URL</th>
         <th scope="col">Modify</th>

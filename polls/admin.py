@@ -15,13 +15,6 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['question_text']
 
-class ChoiceAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Choice Statement', {'fields': ['choice_text']}),
-    ]
-    list_filter = ['question']
-    search_fields = ['choice_text']
-
 # Register your models here.
 admin.site.register(Question, QuestionAdmin)
-admin.site.register(Choice, ChoiceAdmin)
+admin.site.register(Choice)

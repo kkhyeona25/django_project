@@ -1,14 +1,38 @@
 body {
     background: white url("images/background.png") no-repeat;
-    background-position: center;
+    background-position: center 300px;
     background-size: 10%;
     height: 500px;
-    border-top: 10px solid #ccc;
 }
+
 title{
     color: #c80;
     font-weight: bold;
 }
+
+ul li {
+    list-style: none;
+    font-size: 16px;
+}
+
 li a {
     color: green;
+}
+
+li a:hover {
+    color: green;
+}
+
+.btn.btn-primary {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.btn.btn-secondary a {
+    color: white;
+}
+
+.btn-success, .btn-danger {
+    margin-top: 10px;
 }

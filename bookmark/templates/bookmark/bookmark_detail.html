@@ -1,8 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'bookmark/base.html' %}
 
-{% block title %}Detail{% endblock %}
+{% block title %}Bookmark Detail{% endblock %}
 
 {% block content %}
+
 {{object.site_name}}<br/>
-{{object.url}}
+<a href="{{bookmark.url}}" target="_blank">{{object.url}}</a><br/>
+
+<a href="{% url 'bookmark:update' pk=bookmark.id %}" class="btn btn-success btn-sm">Modify</a>
+<a href="{% url 'bookmark:delete' pk=bookmark.id %}" class="btn btn-danger btn-sm">Delete</a>
+
 {% endblock %}

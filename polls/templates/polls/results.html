@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends 'polls/base.html' %}
+
+{% block title %} Polls results{% endblock %}
+
+{% block content %}
+
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-</head>
-<body>
-<h1>{{question.question_text}}</h1>
+
+<h3>{{question.question_text}}</h3>
 <ul>
     {% for choice in question.choice_set.all %}
     <li>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
     {% endfor %}
 </ul>
-<ul>
-    <li><a href="{% url 'polls:detail' question.id %}">Vote again?</a></li>
-</ul>
-</body>
-</html>
+<button type="button" class="btn btn-secondary"><a href="{% url 'polls:detail' question.id %}">뒤로 가기</a></button>
+<button type="button" class="btn btn-secondary"><a href="{% url 'polls:index' %}">목록</a></button>
+{% endblock %}

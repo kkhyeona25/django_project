@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends 'polls/base.html' %}
+
+{% block title %} Polls detail{% endblock %}
+
+{% block content %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-</head>
-<body>
-<h1>{{question.question_text}}</h1>
+
+<h3>{{question.question_text}}</h3>
 {% if error_message %} <p> <strong>{{error_message}}</strong></p>{% endif %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
@@ -16,7 +15,8 @@
     <input type ="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
     <label for ="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
 {% endfor %}
-<input type="submit" value="Vote">
+<input type="submit" value="Vote" class="btn btn-primary">
 </form>
-</body>
-</html>
+<button type="button" class="btn btn-secondary"><a href="{% url 'polls:index' %}">뒤로 가기</a></button>
+
+{% endblock %}

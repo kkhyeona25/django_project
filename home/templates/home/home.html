@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %} home.html{% endblock %}
+{% block title %} Home{% endblock %}
 
 {% block content %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
-<h4>Django Project</h4>
+{% endblock %}
+{% block header %}
+<h1><a href="{% url 'home:home' %}">Django Project Home</a></h1>
 {% endblock %}
